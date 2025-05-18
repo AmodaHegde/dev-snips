@@ -1,40 +1,21 @@
-import { useState } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React from 'react';
 import Header from './components/layout/Header.tsx';
-import './App.css';
+import { Container, Typography } from '@mui/material';
 
-function App() {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [username, setUsername] = useState<string>('');
-
-  const handleThemeToggle = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode');
-  };
-
-  const handleLogout = () => {
-    // Implement logout logic here
-    setIsLoggedIn(false);
-    setUsername('');
-  };
-
+const App: React.FC = () => {
   return (
-    <Router>
-      <div className={`app ${isDarkMode ? 'dark-mode' : ''}`}>
-        <Header 
-          isDarkMode={isDarkMode}
-          onThemeToggle={handleThemeToggle}
-          isLoggedIn={isLoggedIn}
-          username={username}
-          onLogout={handleLogout}
-        />
-        <main>
-          {/* Your routes and content will go here */}
-        </main>
-      </div>
-    </Router>
+    <>
+      <Header />
+      <Container sx={{ mt: 4 }}>
+        <Typography variant="h4" gutterBottom>
+          Welcome to MyApp
+        </Typography>
+        <Typography variant="body1">
+          This is a simple app using React + MUI.
+        </Typography>
+      </Container>
+    </>
   );
-}
+};
 
 export default App;
