@@ -20,9 +20,9 @@ const Header: React.FC = () => {
           </>
           <>
               <Typography>"UserName"</Typography>
-              <IconButton onClick={console.log("Home")} sx={{ color: 'inherit' }}>
+              {/* <IconButton onClick={console.log("Home")} sx={{ color: 'inherit' }}>
                 <ExpandMoreIcon />
-              </IconButton>
+              </IconButton> */}
               {/* <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
                 <MenuItem onClick={() => { navigate('/account'); handleClose(); }}>Account</MenuItem>
                 <MenuItem onClick={handleLogout}>Logout</MenuItem>
